@@ -10,14 +10,14 @@ An important detail was this challenge was not one that was listed as one that w
 
 ## Finding the solution
 Eventually, I noticed something odd. In my IDE, the second argument in the encrypt function is grayed out, indicating that it isn't used:
-```
+```python
     def encrypt(self, msg_poly, rand_poly):
         return (((self.h_poly).trunc(self.q) + msg_poly) % self.R_poly).trunc(self.q)
 ```
 Sure enough, it isn't using the randomly generated polynomial. 
 According to my research, proper encryption will multiply the public key polynomial (h_poly) by a random polynomial before adding the message.
 Without it, decrypting is as simple as subtracting the public key back out and doing the modulo again.
-```
+```python
 def decrypt(h_poly, enc_poly):
     q = 128
     N = 97
