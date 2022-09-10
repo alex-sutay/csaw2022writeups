@@ -46,7 +46,7 @@ My best model had 100% training accuracy and output the flag perfectly.
 
 ## Code
 Model training:
-```
+```python
 import pickle
 import numpy as np
 import matplotlib.cm as cm
@@ -94,7 +94,7 @@ model.fit(X, y, batch_size=32, epochs=20, shuffle=True)
 model.save('model.h1')
 ```
 Getting the flag:
-```
+```python
 import tensorflow as tf
 import pickle
 
